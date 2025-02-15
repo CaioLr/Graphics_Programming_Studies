@@ -8,17 +8,15 @@
 class Circle : public sf::CircleShape{
 public:
     std::array<float, 2> velocity;
-    float rad;
-    sf::Color color;
 
     Circle(float radius) : sf::CircleShape(radius) {};  
 
-    void setRad(float s){
-        rad = s;
+    void setRadius(float x){
+        sf::CircleShape::setRadius(x);
     };
 
-    float getRad(){
-        return rad;
+    float getRadius(){
+        return sf::CircleShape::getRadius();
     }
 
     void setPosition(float x, float y) {
@@ -31,7 +29,7 @@ public:
         return output;
     };
 
-    void setColor( int color[3]){
+    void setColor( std::array<int, 3> color){
         sf::CircleShape::setFillColor(sf::Color(color[0], color[1], color[2]));
     };
 
